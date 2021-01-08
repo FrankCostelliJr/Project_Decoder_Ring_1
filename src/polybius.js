@@ -1,5 +1,13 @@
 'use strict';
-const originAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', '(i/j)', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '];
+const originAlphabet = [
+  'a', 'b', 'c', 'd', 'e',
+  'f', 'g', 'h', '(i/j)',
+  'k', 'l', 'm', 'n', 'o',
+  'p', 'q', 'r', 's', 't',
+  'u', 'v', 'w', 'x', 'y',
+  'z', ' '
+];
+
 const codeAlphabet = ['11', '21', '31', '41', '51', '12', '22', '32', '42', '52', '13', '23', '33', '43', '53', '14', '24', '34', '44', '54', '15', '25', '35', '45', '55', '16'];
 
 //* Helper function: check the length of input string and verify it is an even number

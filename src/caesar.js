@@ -10,7 +10,7 @@ function caesar(input, shift, encode = true) {
     let codeString = '';
     for(let index = 0; index < inputString.length; index++) {
       let currentLetter = inputString[index];
-      if(currentLetter === ' ') {
+      if(currentLetter === ' ' || !alphabet.includes(currentLetter)) {
         codeString += currentLetter;
         continue;
       }
@@ -18,11 +18,7 @@ function caesar(input, shift, encode = true) {
       let newIndex = currentIndex + shift;
       if(newIndex > 25) newIndex -= 26;
       if(newIndex < 0) newIndex += 26;
-      if(input[index] === input[index].toUpperCase()) {
-        codeString += alphabet[newIndex].toUpperCase(); 
-      } else {
-        codeString += alphabet[newIndex];
-      }
+      codeString += alphabet[newIndex];
     }
     return codeString;
   }
@@ -31,7 +27,7 @@ function caesar(input, shift, encode = true) {
     let decodeString = '';
     for(let index = 0; index < inputString.length; index++) {
       let currentLetter = inputString[index];
-      if(currentLetter === ' ') {
+      if(currentLetter === ' ' || !alphabet.includes(currentLetter)) {
         decodeString += currentLetter;
         continue;
       }
@@ -39,11 +35,7 @@ function caesar(input, shift, encode = true) {
       let newIndex = currentIndex - shift;
       if(newIndex > 25) newIndex -= 26;
       if(newIndex < 0) newIndex += 26;
-      if(input[index] === input[index].toUpperCase()) {
-        decodeString += alphabet[newIndex].toUpperCase(); 
-      } else {
-        decodeString += alphabet[newIndex];
-      }
+      decodeString += alphabet[newIndex];
     }
     return decodeString;
   }
