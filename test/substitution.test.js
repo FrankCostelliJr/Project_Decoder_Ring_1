@@ -51,7 +51,7 @@ describe('substitution', () => {
     expect(actual).to.be.false;
   });
 
-  it('should maintain all spaces properly when encoding', () => {
+  it('should maintain all spaces when encoding', () => {
     let encode = true;
     const expected = 'w pd p lzkwfr';
     const actual = substitution('I am a string', codeAlphabet, encode);

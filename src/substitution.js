@@ -16,9 +16,7 @@ function findDuplicates(codeString) {
 }
 
 function substitution(input, alphabet, encode = true) {
-  if(!input || !alphabet) return false;
-  if(typeof alphabet !== 'string') return false;
-  if(alphabet.length !== 26) return false;
+  if(!input || !alphabet || typeof alphabet !== 'string' || alphabet.length !== 26) return false;
   if(findDuplicates(alphabet).length > 0) return false;
   
   const codeAlphabet = alphabet.toLowerCase().split(''); 
@@ -27,7 +25,7 @@ function substitution(input, alphabet, encode = true) {
   if(encode === true) {
     let code = '';
     inputArray.forEach(letter => {
-      if (letter === ' ') return code += letter;
+      if (letter === ' ') return code += letter; 
       let foundIndex = originAlphabet.indexOf(letter);
       code += codeAlphabet[foundIndex];
     });

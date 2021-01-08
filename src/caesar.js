@@ -1,11 +1,10 @@
 'use strict';
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 function caesar(input, shift, encode = true) {
-  if(!shift || !input) return false;
-  if(shift === 0 || shift > 25 || shift < -25) return false;
+  if(!shift || !input || shift === 0 || shift > 25 || shift < -25) return false;
   const inputString = input.toLowerCase();
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  
+    
   if (encode) {
     let codeString = '';
     for(let index = 0; index < inputString.length; index++) {

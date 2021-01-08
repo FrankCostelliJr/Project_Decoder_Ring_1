@@ -24,7 +24,7 @@ describe('polybius', () => {
     expect(actual).to.equal(expected);
   });
 
-  it('when decoding, if the number of characters in the string excluding spaces should be even', () => {
+  it('when decoding, the number of characters in the string excluding spaces should be even', () => {
     let encode = false;
     const actual = polybius('4432423352125413 443', encode);
     expect(actual).to.be.false;

@@ -62,7 +62,6 @@ describe('caesar', () => {
     expect(actual).to.equal(expected);
   });
 
-
   it('should wrap around to the front of the alphabet if the letter is shifted past the end of the alphabet', () => {
     let encode = true;
     const expected = 'cheud';

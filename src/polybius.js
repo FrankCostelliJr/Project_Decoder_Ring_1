@@ -8,7 +8,14 @@ const originAlphabet = [
   'z', ' '
 ];
 
-const codeAlphabet = ['11', '21', '31', '41', '51', '12', '22', '32', '42', '52', '13', '23', '33', '43', '53', '14', '24', '34', '44', '54', '15', '25', '35', '45', '55', '16'];
+const codeAlphabet = [
+  '11', '21', '31', '41', '51',
+  '12', '22', '32', '42', '52',
+  '13', '23', '33', '43', '53',
+  '14', '24', '34', '44', '54',
+  '15', '25', '35', '45', '55',
+  '16'
+];
 
 //* Helper function: check the length of input string and verify it is an even number
 function checkLength(input) {
@@ -26,11 +33,11 @@ function polybius(input, encode = true) {
     let encode = '';
     const stringArray = input.toLowerCase().split('');
     stringArray.forEach(letter => {
-      if(letter === 'i' || letter === 'j') return encode += '42';
+      if(letter === 'i' || letter === 'j') return encode += '42'; //handling the '(i/j)' codes
       let foundIndex = originAlphabet.indexOf(letter);
       encode += codeAlphabet[foundIndex];
     });
-    return encode.replace(/16/g,' ');
+    return encode.replace(/16/g,' '); //changing '16' back into a space
   }
   if(!encode) {
     if(checkLength(input) === 1) return false;
