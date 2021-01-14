@@ -1,6 +1,6 @@
 'use strict';
 
-const originAlphabet = [
+const normalAlphabet = [
   'a', 'b', 'c', 'd', 'e', 'f',
   'g', 'h', 'i', 'j', 'k', 'l',
   'm', 'n', 'o', 'p', 'q', 'r',
@@ -26,7 +26,7 @@ function substitution(input, alphabet, encode = true) {
     let code = '';
     inputArray.forEach(letter => {
       if (letter === ' ') return code += letter; 
-      let foundIndex = originAlphabet.indexOf(letter);
+      let foundIndex = normalAlphabet.indexOf(letter);
       code += codeAlphabet[foundIndex];
     });
     return code;
@@ -37,7 +37,7 @@ function substitution(input, alphabet, encode = true) {
     inputArray.forEach(letter => {
       if (letter === ' ') return decode += letter;
       let foundIndex = codeAlphabet.indexOf(letter);
-      decode += originAlphabet[foundIndex];
+      decode += normalAlphabet[foundIndex];
     });
     return decode;
   }

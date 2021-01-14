@@ -67,8 +67,8 @@ describe('substitution', () => {
 
   it('should correctly encode the input phrase when encode === true', () => {
     let encode = true;
-    const expected = 'zewfatxs';
-    const actual = substitution('Thinkful', codeAlphabet, encode);
+    const expected = 'ykrrpik';
+    const actual = substitution('message', 'plmoknijbuhvygctfxrdzeswaq', encode);
     expect(actual).to.equal(expected);
   });
 
